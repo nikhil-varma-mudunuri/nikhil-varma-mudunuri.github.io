@@ -1,0 +1,36 @@
+@mixin shrink {
+  top: -20%;
+  font-size: 1.2em;
+}
+.custom-input {
+  width: 100%;
+  height: 40px;
+  position: relative;
+
+  &.shrink > label {
+    @include shrink();
+  }
+
+  input {
+    width: 100%;
+    height: 100%;
+    outline: none;
+    padding: 0 10px;
+    border: none;
+    border-bottom: 1px solid black;
+
+    &:focus ~ label {
+      @include shrink();
+    }
+  }
+
+  label {
+    position: absolute;
+    left: 10px;
+    top: 20%;
+    text-transform: uppercase;
+    color: grey;
+    font-size: 1.5em;
+    transition: ease-in 250ms;
+  }
+}

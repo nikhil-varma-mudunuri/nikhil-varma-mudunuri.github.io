@@ -1,0 +1,24 @@
+.chairperson-tab {
+  width: 100%;
+
+  & > * {
+    margin-top: 50px;
+  }
+
+  .option-input {
+    width: 50%;
+    margin: 0 auto;
+    position: relative;
+
+    & .icon {
+      position: absolute;
+      right: 0;
+      font-size: 2em;
+      top: 20%;
+      cursor: pointer;
+    }
+  }
+  .buttons > * {
+    margin-left: 40px;
+  }
+}

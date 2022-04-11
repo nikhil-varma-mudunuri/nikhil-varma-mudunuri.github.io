@@ -1,0 +1,46 @@
+.timer-container {
+  margin-top: 50px;
+  margin-bottom: 30px;
+  width: 30%;
+  border: 1px solid black;
+  padding: 30px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+
+  h3 {
+    position: absolute;
+    font-size: 1.4em;
+    top: -25px;
+    left: 35%;
+    background-color: white;
+    padding: 0 5px;
+  }
+
+  p {
+    margin: 0;
+    &:first-child {
+      padding-bottom: 10px;
+    }
+  }
+
+  .tag {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .value {
+    font-size: 2em;
+  }
+
+  .label {
+    font-weight: 300;
+    font-size: 1.2em;
+  }
+
+  span {
+    padding-bottom: 20px;
+    font-size: 2em;
+  }
+}

@@ -1,25 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import initialSetup from "./functions/initialSetup";
+import handleChanges from "./functions/handleChanges";
+import Settings from "./pages/settings/settings";
+import NavBar from "./components/navbar/navbar";
+import Home from "./pages/home/home";
+import CreateContract from "./pages/create-contract/create-contract";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { Route, Routes } from "react-router-dom";
 
-function App() {
+// App Component
+
+const App = () => {
+  const dispatch = useDispatch();
+  const { isLoggedIn } = useSelector((state) => state.information);
+  useEffect(() => {
+    handleChanges(dispatch);
+    initialSetup(dispatch, isLoggedIn);
+  });
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <NavBar />
+      {isLoggedIn ? (
+        <Routes>
+          <Route path="/create-contract" element={<CreateContract />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/settings" element={<Settings />} />
+        </Routes>
+      ) : (
+        <p>Connect metamask account to access</p>
+      )}
     </div>
   );
-}
+};
 
 export default App;
