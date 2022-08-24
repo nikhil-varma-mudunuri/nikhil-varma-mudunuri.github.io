@@ -1,7 +1,9 @@
 # Getting Started with e-voting application
 
 frontend is done with reactJs
+
 backend is done with blockchain (ethereum chain)
+
 https://nikhil-varma-mudunuri.github.io/server/ to visit the website
 
 
